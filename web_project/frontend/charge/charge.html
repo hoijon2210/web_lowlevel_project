@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>충전하기 : OK Chief</title>
+    <link rel="stylesheet" type="text/css" href="css/charge.css">
+    <meta name="decorator" content="ID_PW_INQUIRY_V2">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery 추가 -->
+</head>
+
+<body class="whole_white">
+    <div id="wrap" class="wrap">
+        <div class="u_skip"><a href="#container">본문 바로가기</a></div>
+
+        <header id="header" role="banner" class="header">
+            <div class="header_logo">
+                <a href="javascript:;" onclick="goNaver();">
+                    <h1 class="logo"><span class="blind">OK Chief</span></h1>
+                </a>
+            </div>
+        </header>
+
+        <div id="container" class="container">
+            <form id="fm" name="fm" action="/user2/help/pwInquiry?m=actionInputUserId" method="post">
+                <div class="content">
+                    <div class="find_wrap">
+                        <div class="find_inner">
+                            <div class="title_wrap">
+                                <h2 class="title">
+                                    충전할 금액을 입력해주세요.
+                                </h2>
+                            </div>
+                            <div id="idInputRow" class="input_row">
+                                <span id="idIcon" class="icon_name"><span class="blind">아이디</span></span>
+                                <input type="text" placeholder="충전할 금액 입력" id="idInput" class="input_name" name="userId" maxlength="40">
+                                <button type="button" id="bulletDelete" class="bullet_delete" style="display: none"><span class="blind">삭제</span></button>
+                            </div>
+                            <div class="button_row">
+                                <button type="button" class="amount_button" onclick="addAmount(10000)">+1만원</button>
+                                <button type="button" class="amount_button" onclick="addAmount(50000)">+5만원</button>
+                                <button type="button" class="amount_button" onclick="addAmount(100000)">+10만원</button>
+                                <button type="button" class="amount_button" onclick="addAmount(500000)">+50만원</button>
+                                <button type="button" class="amount_button" onclick="addAmount(1000000)">+100만원</button>
+                            </div>
+                            <button type="button" class="btn_check" onclick="checkIdAndSubmit();"><span class="text">충전하기</span></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#idInput").focus(function() {
+                    $("#idInputRow").addClass("focus");
+                });
+
+                $("#idInput").blur(function() {
+                    $("#idInputRow").removeClass("focus");
+                });
+
+                $("#idInput").on("input", function() {
+                    if ($("#idInput").val()) {
+                        $("#bulletDelete").show();
+                        $("#idIcon").addClass("on");
+                    } else {
+                        $("#bulletDelete").hide();
+                        $("#idIcon").removeClass("on");
+                    }
+                });
+
+                $("#bulletDelete").click(function() {
+                    $("#idInput").val("");
+                    $("#bulletDelete").hide();
+                    $("#idInput").focus();
+                });
+            });
+
+            function goNaver() {
+                document.location.href = "https://www.naver.com";
+            }
+
+            function checkIdAndSubmit() {
+                // 필요한 유효성 검사 및 제출 로직 추가
+                $("#fm").submit();
+            }
+
+            function addAmount(amount) {
+                var currentAmount = parseInt($("#idInput").val().replace(/,/g, '')) || 0;
+                var newAmount = currentAmount + amount;
+                $("#idInput").val(newAmount.toLocaleString());
+                $("#idInput").trigger("input");
+            }
+        </script>
+
+        <footer class="footer" role="contentinfo">
+            <div class="footer_inner">
+                <ul class="footer_list">
+                    <li><a href="https://www.navercorp.com/" target="_blank" class="footer_item"><div class="footer_logo"><span class="blind">OK Chief</span></div></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
