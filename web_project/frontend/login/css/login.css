@@ -72,11 +72,10 @@ table {
     font-size: 0
 }
 
-.footer .footer_copy .footer_logo,.header .logo,.reconfirm_top .logo {
-    background-image: url(https://ssl.pstatic.net/static/nid/login/m_sp_00_common_978240a6.png);
-    background-size: 244px 107px;
+/*.footer .footer_copy .footer_logo,.header .logo,.reconfirm_top .logo {
+    background-image : url(../img/login.png);
     background-repeat: no-repeat
-}
+}*/
 
 .blank_content .text::before,.btn_view.hide .icon_view,.bullet_help,.cafe24_content .btn_register .text::before,.cafe24_content .button_area .text_app::before,.cafe24_content .button_area .text_talktalk::before,.cafe24_content .register_box .btn_delete_file .text::before,.cafe24_content .register_box .btn_info::before,.cafe24_content .register_box .btn_layer_close::before,.cafe24_content .register_box .label_file .text::before,.captcha_row .btn_picture::after,.captcha_row .btn_refresh::after,.captcha_row .btn_sound::after,.captcha_wrap .captcha_audio .icon_audio,.chatbot .icon_chatbot,.country_list .icon_country_check,.header_blank .btn_close::before,.header_blank .header_title .link::before,.header_oauth .btn_profile::after,.header_oauth .logo .link::before,.header_oauth .tooltip::before,.icon_beta,.icon_delete,.icon_view,.img_lock,.img_wowpoint,.input_item.country .country_code::after,.ip_relogin_box .relogin_close::after,.ip_relogin_box .relogin_tip::before,.keep_check .keep_text::before,.keep_check input:checked+.keep_text::before,.lang::after,.menu_id .menu_text::before,.menu_id.on .menu_text::before,.menu_id.on::after,.menu_ones .menu_text::before,.menu_ones.on .menu_text::before,.menu_ones.on::after,.menu_ones.on::before,.menu_qr .menu_text::before,.menu_qr.on .menu_text::before,.menu_qr.on::before,.nudge_banner .nudge_close .icon_nudge_close,.oauth_wrap .age_area::before,.oauth_wrap .btn_close::before,.oauth_wrap .check_all input:checked+label::before,.oauth_wrap .check_all label::before,.oauth_wrap .check_item .link::before,.oauth_wrap .check_item input:checked+label::before,.oauth_wrap .check_item label::before,.ones_text .bullet_dotte,.ones_text .bullet_set,.pop_img_lock,.qrcode_help_stepbox .popup_close::after,.qrcode_help_stepbox .step_title::before,.reconfirm_sub .captcha_wrap .voice_box .icon_voice,.sns_wrap li:nth-child(1) .sns_text::before,.sns_wrap li:nth-child(2) .sns_text::before,.sns_wrap li:nth-child(3) .sns_text::before,.step_ask .ask_text::before,.sub_desc .bullet_greendot,.sub_desc .bullet_lens,.terms_detail .naver_logo::before,.time_wrap .btn_renewal::before,body.oauth_mobile .header_oauth .btn_profile::after,body.oauth_mobile .header_oauth .logo .link::before,body.oauth_mobile .oauth_wrap .age_area::before {
     background-image: url(https://ssl.pstatic.net/static/nid/login/m_sp_01_login_775fb7c0.png);
@@ -91,7 +90,7 @@ body {
 }
 
 body.full_height .container,body.full_height .content {
-    height: 100%
+    height: 120%
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -507,7 +506,7 @@ input[type=text]::-webkit-input-placeholder {
     left: -1px;
     right: -1px;
     bottom: -1px;
-    border: solid 2px #09aa5c;
+    border: solid 2px #1f2020;
     border-radius: 6px;
     z-index: 5
 }
@@ -568,7 +567,7 @@ input[type=text]::-webkit-input-placeholder {
 }
 
 .message_text .accent {
-    color: #09aa5c;
+    color: #1f2020;
     font-weight: 700
 }
 
@@ -661,7 +660,7 @@ input[type=text]::-webkit-input-placeholder {
     left: -1px;
     right: -1px;
     bottom: -1px;
-    border: 2px solid #09aa5c;
+    border: 2px solid #1f2020;
     transition: all .2s cubic-bezier(.4,0,.2,1);
     z-index: 2
 }
@@ -870,7 +869,7 @@ input[type=text]::-webkit-input-placeholder {
 .text_label {
     display: inline-block;
     position: absolute;
-    bottom: 18px;
+    bottom: 30px;
     left: 15px;
     font-size: 16px;
     font-weight: 400;
@@ -972,7 +971,7 @@ input[type=text]::-webkit-input-placeholder {
     font-weight: 600;
     line-height: 23px;
     letter-spacing: -.5px;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .captcha_wrap .audio_message {
@@ -980,7 +979,7 @@ input[type=text]::-webkit-input-placeholder {
 }
 
 .captcha_wrap .audio_message .accent {
-    color: #09aa5c
+    color: #1f2020
 }
 
 .captcha_wrap .captcha_audio {
@@ -1007,7 +1006,7 @@ input[type=text]::-webkit-input-placeholder {
     font-weight: 500;
     line-height: 23px;
     letter-spacing: -.5px;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .captcha_row {
@@ -1159,7 +1158,7 @@ input[type=text]::-webkit-input-placeholder {
 }
 
 .ip_check .switch_checkbox:checked+.switch_btn {
-    background-color: #09aa5c;
+    background-color: #1f2020;
     transition: all .3s ease;
     text-align: left
 }
@@ -1326,7 +1325,7 @@ input[type=text]::-webkit-input-placeholder {
 
 .ones_text .accent {
     font-weight: 500;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .top_desc {
@@ -1425,7 +1424,7 @@ input[type=text]::-webkit-input-placeholder {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: -.3px;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .time_wrap .btn_renewal {
@@ -1434,7 +1433,7 @@ input[type=text]::-webkit-input-placeholder {
     font-size: 15px;
     line-height: 19px;
     font-weight: 600;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .time_wrap .btn_renewal::before {
@@ -1616,7 +1615,7 @@ input[type=text]::-webkit-input-placeholder {
 .ip_relogin_box {
     position: relative;
     margin: 0 auto;
-    padding: 56px 0 0;
+    padding: 70px 0 0;
     border-radius: 16px;
     background-color: #fff;
     box-sizing: border-box
@@ -1877,7 +1876,7 @@ input[type=text]::-webkit-input-placeholder {
     width: 100%;
     padding: 13px 20px;
     border-radius: 8px;
-    background-color: #09aa5c;
+    background-color: #1f2020;
     box-sizing: border-box
 }
 
@@ -2014,7 +2013,7 @@ input[type=text]::-webkit-input-placeholder {
     padding: 4px 20px 3px 9px;
     border-radius: 12px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-    border: solid 1px #09aa5c;
+    border: solid 1px #1f2020;
     background-color: #fff;
     box-sizing: border-box;
     z-index: 10
@@ -2098,7 +2097,7 @@ body.oauth_mobile {
 }
 
 body.oauth_mobile .container,body.oauth_mobile .content,body.oauth_mobile .oauth_wrap {
-    height: 100%
+    height: 120%
 }
 
 body.oauth_mobile .header_oauth {
@@ -2268,7 +2267,7 @@ body.oauth_full .oauth_wrap .scroll_area {
 }
 
 body.oauth_pc_popup .container,body.oauth_pc_popup .content,body.oauth_pc_popup .oauth_wrap {
-    height: 100%
+    height: 120%
 }
 
 body.oauth_pc_popup .header_oauth {
@@ -2604,7 +2603,7 @@ body.oauth_pc_popup .btn_area {
 }
 
 .oauth_wrap .scroll_area .point {
-    color: #09aa5c
+    color: #1f2020
 }
 
 .oauth_wrap .section+.section {
@@ -2813,7 +2812,7 @@ body.oauth_pc_popup .btn_area {
 }
 
 .oauth_wrap .btn_area .btn.agree {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .oauth_wrap .age_area {
@@ -2890,7 +2889,7 @@ body.oauth_pc_popup .btn_area {
 }
 
 .oauth_bridge .point {
-    color: #09aa5c
+    color: #1f2020
 }
 
 .oauth_bridge .btn_area {
@@ -2910,7 +2909,7 @@ body.oauth_pc_popup .btn_area {
 }
 
 .oauth_bridge .button.green {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .terms_detail {
@@ -2965,7 +2964,7 @@ body.oauth_pc_popup .btn_area {
     padding: 16px 0;
     border-radius: 8px;
     border: 1px solid rgba(0,0,0,.05);
-    background: #09aa5c;
+    background: #1f2020;
     font-size: 18px;
     line-height: 22px;
     color: #fff
@@ -3217,7 +3216,7 @@ body.cafe24 .content.start_page .cafe24_content {
 
 .cafe24_content .start_box .point {
     font-weight: 700;
-    color: #09aa5c
+    color: #1f2020
 }
 
 .cafe24_content .start_box .list {
@@ -3267,7 +3266,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .button_area .button.on {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .cafe24_content .button_area .button:disabled {
@@ -3340,7 +3339,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .order_list.first_on .item.first .order {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .cafe24_content .order_list.first_on .item.first .text {
@@ -3349,7 +3348,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .order_list.second_on .item.first .order {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .cafe24_content .order_list.second_on .item.first .text {
@@ -3366,11 +3365,11 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .order_list.second_on .line.first {
-    background: linear-gradient(to right,#09aa5c 0,#00a48e)
+    background: linear-gradient(to right,#1f2020 0,#00a48e)
 }
 
 .cafe24_content .order_list.third_on .item.first .order {
-    background: #09aa5c
+    background: #1f2020
 }
 
 .cafe24_content .order_list.third_on .item.first .text {
@@ -3395,7 +3394,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .order_list.third_on .line.first {
-    background: linear-gradient(to right,#09aa5c 0,#00a48e)
+    background: linear-gradient(to right,#1f2020 0,#00a48e)
 }
 
 .cafe24_content .order_list.third_on .line.second {
@@ -3482,7 +3481,7 @@ body.cafe24 .content.start_page .cafe24_content {
     padding: 12px 20px 11px 16px;
     border-radius: 4px;
     border: 1px solid rgba(0,0,0,.05);
-    background: #09aa5c
+    background: #1f2020
 }
 
 .cafe24_content .btn_register .text {
@@ -3556,7 +3555,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .table_list input:checked+label .box {
-    border-color: #09aa5c
+    border-color: #1f2020
 }
 
 .cafe24_content .table_list input:checked+label .box::before {
@@ -3566,7 +3565,7 @@ body.cafe24 .content.start_page .cafe24_content {
     bottom: 3px;
     left: 3px;
     border-radius: 50%;
-    background: #09aa5c;
+    background: #1f2020;
     content: ''
 }
 
@@ -3579,7 +3578,7 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .table_list label:hover .box {
-    border-color: #09aa5c
+    border-color: #1f2020
 }
 
 .cafe24_content .box {
@@ -3758,11 +3757,11 @@ body.cafe24 .content.start_page .cafe24_content {
 }
 
 .cafe24_content .register_box .text_input:not(:-moz-read-only):focus,.cafe24_content .register_box .text_input:not(:-moz-read-only):hover {
-    border-color: #09aa5c
+    border-color: #1f2020
 }
 
 .cafe24_content .register_box .text_input:not(:read-only):focus,.cafe24_content .register_box .text_input:not(:read-only):hover {
-    border-color: #09aa5c
+    border-color: #1f2020
 }
 
 .cafe24_content .register_box .text_input.error {
