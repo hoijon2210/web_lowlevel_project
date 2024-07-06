@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OK Chief</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .auth-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .auth-links a {
+            color: #fff;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #333;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .category {
+            display: none;
+        }
+        .category.active {
+            display: block;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-info h3 {
+            margin: 0 0 10px 0;
+        }
+        .product-info p {
+            color: #555;
+        }
+        .product-info .price {
+            font-size: 1.2em;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>OK Chief</h1>
+    <div class="auth-links">
+        <a href="login/n_login.html">로그인</a>
+        <a href="">회원가입</a>
+        <a href="charge/charge.html">충전</a>
+    </div>
+</header>
+
+<div class="tabs">
+    <div class="tab active" data-category="Apple">Apple</div>
+    <div class="tab" data-category="Galaxy 탭">Galaxy</div>
+</div>
+<div class="container">
+    <div class="sort">
+        <select id="sort">
+            <option value="default">기본</option>
+            <option value="price-asc">가격 오름차순</option>
+            <option value="price-desc">가격 내림차순</option>
+        </select>
+    </div>
+</div>
+
+<div class="container" id="product-container">
+    <!-- JavaScript에서 동적으로 제품을 추가합니다. -->
+</div>
+
+<script>
+    const products = {
+        'Apple': [
+            { name: 'Apple 12', price: '1,000,000원', image: 'iphone12.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
+            { name: 'Apple 13', price: '1,300,000원', image: 'iphone13.jpg' }
+        ],
+        'Galaxy 탭': [
+            { name: 'Galaxy 탭 S6', price: '700,000원', image: 'galaxytabs6.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
+            { name: 'Galaxy 탭 S8', price: '1,100,000원', image: 'galaxytabs8.jpg' }
+        ]
+    };
+
+    const container = document.getElementById('product-container');
+
+    function displayCategory(category) {
+        container.innerHTML = '';
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'category active';
+
+        const productList = document.createElement('div');
+        productList.className = 'product-list';
+
+        products[category].forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            const productImg = document.createElement('img');
+            productImg.src = 'images/' + product.image;
+            productImg.alt = product.name;
+            productDiv.appendChild(productImg);
+
+            const productInfo = document.createElement('div');
+            productInfo.className = 'product-info';
+
+            const productName = document.createElement('h3');
+            productName.textContent = product.name;
+            productInfo.appendChild(productName);
+
+            const productPrice = document.createElement('p');
+            productPrice.className = 'price';
+            productPrice.textContent = product.price;
+            productInfo.appendChild(productPrice);
+
+            productDiv.appendChild(productInfo);
+            productList.appendChild(productDiv);
+        });
+
+        categoryDiv.appendChild(productList);
+        container.appendChild(categoryDiv);
+    }
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            displayCategory(tab.getAttribute('data-category'));
+        });
+    });
+
+    // 초기 카테고리 표시
+    displayCategory('Apple');
+</script>
+
+</body>
+</html>
