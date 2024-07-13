@@ -27,15 +27,20 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_ROOT_PASSWORD: 9&zearn0#ZN0%
       MYSQL_DATABASE: your_database
-      MYSQL_USER: your_username
-      MYSQL_PASSWORD: your_password
+      MYSQL_USER: hoijon
+      MYSQL_PASSWORD: 9&zearn0#ZN0%
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
     networks:
       - webnet
 
 networks:
   webnet:
+
+volumes:
+  mysql_data:
 
