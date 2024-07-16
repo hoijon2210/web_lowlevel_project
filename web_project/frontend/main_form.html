@@ -4,95 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OK Chief</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: relative;
-        }
-        .auth-links {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-        .auth-links a {
-            color: #fff;
-            margin-left: 15px;
-            text-decoration: none;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            margin-right: 5px;
-        }
-        .tab.active {
-            background-color: #333;
-            color: #fff;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .category {
-            display: none;
-        }
-        .category.active {
-            display: block;
-        }
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .product {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            width: calc(33.333% - 20px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .product:hover {
-            transform: scale(1.05);
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-        .product-info {
-            padding: 15px;
-            text-align: center;
-        }
-        .product-info h3 {
-            margin: 0 0 10px 0;
-        }
-        .product-info p {
-            color: #555;
-        }
-        .product-info .price {
-            font-size: 1.2em;
-            color: #e74c3c;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/main_form.css">
 </head>
 <body>
 
@@ -107,62 +19,120 @@
 
 <div class="tabs">
     <div class="tab active" data-category="Apple">Apple</div>
-    <div class="tab" data-category="Galaxy 탭">Galaxy</div>
+    <div class="tab" data-category="Galaxy">Galaxy</div>
 </div>
-<div class="container">
-    <div class="sort">
-        <select id="sort">
-            <option value="default">기본</option>
-            <option value="price-asc">가격 오름차순</option>
-            <option value="price-desc">가격 내림차순</option>
-        </select>
-    </div>
+<div class="sort">
+    <select id="sort">
+        <option value="default">기본</option>
+        <option value="price-asc">가격 오름차순</option>
+        <option value="price-desc">가격 내림차순</option>
+    </select>
 </div>
 
 <div class="container" id="product-container">
-    <!-- JavaScript에서 동적으로 제품을 추가합니다. -->
+    <!-- JavaScript에서 동적으로 제품을 추가합니다. -->     
 </div>
 
 <script>
     const products = {
-        'Apple': [
-            { name: 'Apple 12', price: '1,000,000원', image: 'iphone12.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 12 Pro', price: '1,200,000원', image: 'iphone12pro.jpg' },
-            { name: 'Apple 13', price: '1,300,000원', image: 'iphone13.jpg' }
-        ],
-        'Galaxy 탭': [
-            { name: 'Galaxy 탭 S6', price: '700,000원', image: 'galaxytabs6.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S7', price: '900,000원', image: 'galaxytabs7.jpg' },
-            { name: 'Galaxy 탭 S8', price: '1,100,000원', image: 'galaxytabs8.jpg' }
-        ]
+        'Apple': {
+            'All': [
+                { name: 'iPhone 15 Pro', price: '1,550,000', image: 'iphone15pro.jpeg' },
+                { name: 'iPhone 15', price: '1,250,000', image: 'iphone15.jpeg' },
+                { name: 'iPhone SE', price: '650,000', image: 'iphonese.jpeg' },
+                { name: 'iPad Pro', price: '1,499,000', image: 'ipadpro.jpeg' },
+                { name: 'iPad Air', price: '899,000', image: 'ipadair.jpeg' },
+                { name: 'MacBook Air', price: '1,390,000', image: 'macbookair.jpeg' },
+                { name: 'MacBook Pro', price: '2,390,000', image: 'macbookpro.jpeg' },
+                { name: 'iMac', price: '1,990,000', image: 'imac.jpeg' },
+                { name: 'Mac mini', price: '850,000', image: 'macmini.jpeg' },
+                { name: 'Mac Studio', price: '2,990,000', image: 'macstudio.jpeg' },
+                { name: 'Mac Pro', price: '10,490,000', image: 'macpro.jpeg' },
+                { name: 'Apple Watch Series 9', price: '590,000', image: 'applewatch9.jpeg' },
+                { name: 'Apple Watch Ultra 2', price: '1,149,000', image: 'applewatchultra.jpeg' },
+                { name: 'Apple Watch SE', price: '329,000', image: 'applewatchse.jpeg' },
+                { name: 'AirPods 3th', price: '259,000', image: 'airpods3.jpeg' },
+                { name: 'AirPods Pro', price: '359,000', image: 'airpodspro.jpeg' },
+                { name: 'AirPods Max', price: '769,000', image: 'airpodsmax.jpeg' }
+            ],
+            'iPhone': [
+                { name: 'iPhone 15 Pro', price: '1,550,000', image: 'iphone15pro.jpeg' },
+                { name: 'iPhone 15', price: '1,250,000', image: 'iphone15.jpeg' },
+                { name: 'iPhone SE', price: '650,000', image: 'iphonese.jpeg' }
+            ],
+            'iPad': [
+                { name: 'iPad Pro', price: '1,499,000', image: 'ipadpro.jpeg' },
+                { name: 'iPad Air', price: '899,000', image: 'ipadair.jpeg' }
+            ],
+            'Mac': [
+                { name: 'MacBook Air', price: '1,390,000', image: 'macbookair.jpeg' },
+                { name: 'MacBook Pro', price: '2,390,000', image: 'macbookpro.jpeg' },
+                { name: 'iMac', price: '1,990,000', image: 'imac.jpeg' },
+                { name: 'Mac mini', price: '850,000', image: 'macmini.jpeg' },
+                { name: 'Mac Studio', price: '2,990,000', image: 'macstudio.jpeg' },
+                { name: 'Mac Pro', price: '10,490,000', image: 'macpro.jpeg' }
+            ],
+            'Apple Watch': [
+                { name: 'Apple Watch Series 9', price: '590,000', image: 'applewatch9.jpeg' },
+                { name: 'Apple Watch Ultra 2', price: '1,149,000', image: 'applewatchultra.jpeg' },
+                { name: 'Apple Watch SE', price: '329,000', image: 'applewatchse.jpeg' }
+            ],
+            'AirPods': [
+                { name: 'AirPods 3th', price: '259,000', image: 'airpods3.jpeg' },
+                { name: 'AirPods Pro', price: '359,000', image: 'airpodspro.jpeg' },
+                { name: 'AirPods Max', price: '769,000', image: 'airpodsmax.jpeg' }
+            ]
+        },
+        'Galaxy': {
+            'Galaxy Phones': [
+                { name: 'Galaxy S21', price: '999,000', image: 'galaxys21.jpeg' },
+                { name: 'Galaxy Note 20', price: '1,199,000', image: 'galaxynote20.jpeg' }
+            ],
+            // 다른 Galaxy 하위 카테고리 및 제품 목록 추가
+        }
     };
 
     const container = document.getElementById('product-container');
 
     function displayCategory(category) {
         container.innerHTML = '';
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'category active';
 
+        const subcategoryTabs = document.createElement('div');
+        subcategoryTabs.className = 'subcategory-tabs';
+
+        Object.keys(products[category]).forEach(subcategory => {
+            const subcategoryTab = document.createElement('div');
+            subcategoryTab.className = 'subcategory-tab';
+            subcategoryTab.textContent = subcategory;
+            subcategoryTab.dataset.subcategory = subcategory;
+
+            if (subcategory === 'All') {
+                subcategoryTab.classList.add('active');
+            }
+
+            subcategoryTab.addEventListener('click', () => {
+                document.querySelectorAll('.subcategory-tab').forEach(tab => tab.classList.remove('active'));
+                subcategoryTab.classList.add('active');
+                displaySubcategory(category, subcategory);
+            });
+
+            subcategoryTabs.appendChild(subcategoryTab);
+        });
+
+        container.appendChild(subcategoryTabs);
+        displaySubcategory(category, 'All');
+    }
+
+    function displaySubcategory(category, subcategory) {
         const productList = document.createElement('div');
         productList.className = 'product-list';
 
-        products[category].forEach(product => {
+        products[category][subcategory].forEach(product => {
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
 
             const productImg = document.createElement('img');
-            productImg.src = 'images/' + product.image;
+            productImg.src = 'img/' + product.image;
             productImg.alt = product.name;
             productDiv.appendChild(productImg);
 
@@ -182,8 +152,12 @@
             productList.appendChild(productDiv);
         });
 
-        categoryDiv.appendChild(productList);
-        container.appendChild(categoryDiv);
+        const currentList = document.querySelector('.product-list');
+        if (currentList) {
+            currentList.remove();
+        }
+
+        container.appendChild(productList);
     }
 
     document.querySelectorAll('.tab').forEach(tab => {
