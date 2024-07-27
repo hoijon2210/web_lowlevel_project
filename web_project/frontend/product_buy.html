@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OK Chief : Buy</title>
+    <style>
+        .product-details {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .product-image-container {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .product-details img {
+            width: 300px;
+            height: 300px;
+        }
+        .product-details h1 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        .product-details p {
+            font-size: 1.5em;
+            color: red;
+            margin-bottom: 60px;
+        }
+        .buy-button {
+            background-color: #1f2020;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 15%;
+            transition: background-color 0.3s;
+            text-decoration: none; 
+            display: inline-block;
+        }
+        .buy-button:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price'),
+                image: params.get('image')
+            };
+        }
+
+        function displayProductDetails() {
+            const product = getQueryParams();
+
+            document.getElementById('product-image').src = 'img/' + product.image;
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-price').textContent = product.price + '원';
+        }
+
+        window.onload = displayProductDetails;
+    </script>
+</head>
+<body>
+    <div class="product-details">
+        <div class="product-image-container">
+            <img id="product-image" src="" alt="제품 이미지">
+        </div>
+        <h1 id="product-name"></h1>
+        <p id="product-price"></p>
+        <a href="#" class="buy-button">구매하기</a>
+    </div>
+</body>
+</html>

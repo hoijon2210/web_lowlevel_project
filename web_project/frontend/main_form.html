@@ -134,6 +134,8 @@
             const productImg = document.createElement('img');
             productImg.src = 'img/' + product.image;
             productImg.alt = product.name;
+            productImg.onclick = () => window.location.href = `product_buy.html?name=
+            ${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}`;
             productDiv.appendChild(productImg);
 
             const productInfo = document.createElement('div');
